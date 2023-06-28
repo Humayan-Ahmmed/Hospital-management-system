@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "User";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctors 24/7</title>
+    <link rel="icon" type="image/png" href="~/images/icon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/csss/style.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Doctor24/7</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Welcome: <i class="fa fa-user"></i>Meem</a></li>
+                    <li><a href="http://localhost:55385/Home/AddPost"><i class="fa fa-plus-circle"></i> ADD POST</a></li>
+
+                    <li><a href="http://localhost:55385/Home/AddUser"><i class="fa fa-user-plus"></i> ADD USER</a></li>
+
+                    <li><a href="http://localhost:55385/Home/Profile"><i class="fa fa-user"></i> PROFILE</a></li>
+                    <li><a href="logout.php"><i class="fa fa-power-off"></i> LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="wrapper">
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="http://localhost:55385/Home/Admin" class="list-group-item active">
+                            <i class="fa fa-columns"></i>
+                            Dashboard
+                        </a>
+                        <a href="http://localhost:55385/Home/ViewPost" class="list-group-item">
+
+                            <i class="fa fa-file"></i>  All POSTS
+                        </a>
+                        <a href="media.php" class="list-group-item">
+
+                            <i class="fa fa-database"></i>  MEDIA
+                        </a>
+
+                        <a href="http://localhost:55385/Home/Comments" class="list-group-item">
+
+                            <span class='badge'></span>;
+
+
+                            <i class="fa fa-comments"></i>  COMMENTS
+                        </a>
+                        <a href="http://localhost:55385/Home/Categories" class="list-group-item">
+                            <span class="badge"></span>
+                            <i class="fa fa-folder-open"></i>  CATAGORIES
+                        </a>
+                        <a href="http://localhost:55385/Home/User" class="list-group-item">
+
+                            <i class="fa fa-address-card"></i> USERS
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h1><i class="fa fa-users"></i>Users <small>View All Users</small></h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-tachometer"></i>  DASHBOARD</a></li>
+                        <li class="Active"><i class="fa fa-folder-users"></i> Users</li>
+
+                    </ol>
+
+                    <form action="" method="post">
+                        <div class="row">
+                            <div class="col-sm-8">
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <select name="bulk-options" id="" class="form-control">
+                                                <option value="delete">Delete</option>
+                                                <option value="author">Change To Author</option>
+                                                <option value="admin">Change to Admin</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="submit" class="btn btn-success" value="Apply">
+                                        <a href="http://localhost:55385/Home/AddUser" class="btn btn-danger">Add New</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectallboxes"></th>
+                                    <th>Sr #</th>
+                                    <th>Date </th>
+                                    <th>Name</th>
+                                    <th>User_name</th>
+                                    <th>Email</th>
+                                    <th>Image</th>
+                                    <th>Password</th>
+                                    <th>Role</th>
+
+                                    <th>Edit</th>
+                                    <th>Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <tr>
+                                    <td><input type="checkbox" class="checkboxes" name="checkboxes[]" value=""</td>
+                                    <td>3</td>
+                                    <td>3 jan 2019></td>
+                                    <td>khififuoiasfuoafuoi></td>
+                                    <td>hkjhkjh</td>
+                                    <td>dsajdnksjd</td>
+                                    <td><img src="~/images/a.png" width="30px" class="img-circle"></td>
+                                    <td>*********</td>
+                                    <td>idjslkajdkl</td>
+
+                                    <td><a href="http://localhost:55385/Home/editUser"><i class="fa fa-pencil"></i></a></td>
+                                    <td><a href="users.php?del=<?php echo $id; ?>"><i class="fa fa-times"></i></a></td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    
+
+
+
+
+
+</body>
+
+<footer>
+    <div class="container">
+        <div class="f">
+            <h5 class="text-center">Copyright &copy; by <a href="http://www.Doctors24/7.com">DOCTOR24/7</a> .All Right Reserved from 2019</h5>
+
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+
+
+
+</html>
+
+

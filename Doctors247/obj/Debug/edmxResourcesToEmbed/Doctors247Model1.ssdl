@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Doctors247Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="d_registration">
+    <Key>
+      <PropertyRef Name="doctor_id" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="doctor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="contactNO" Type="int" Nullable="false" />
+    <Property Name="speciality" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Addresss" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="designation" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Fees" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hospital">
+    <Key>
+      <PropertyRef Name="h_id" />
+    </Key>
+    <Property Name="h_id" Type="int" Nullable="false" />
+    <Property Name="h_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="contact" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="spec1" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="spec2" Type="varchar" MaxLength="255" />
+    <Property Name="spec3" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Function Name="GetHospital" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Doctors247ModelStoreContainer">
+    <EntitySet Name="d_registration" EntityType="Self.d_registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hospital" EntityType="Self.hospital" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

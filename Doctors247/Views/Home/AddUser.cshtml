@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctors 24/7</title>
+    <link rel="icon" type="image/png" href="~/images/icon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/csss/style.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Doctor24/7</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Welcome: <i class="fa fa-user"></i>Meem</a></li>
+                    <li><a href="http://localhost:55385/Home/AddPost"><i class="fa fa-plus-circle"></i> ADD POST</a></li>
+
+                    <li><a href="http://localhost:55385/Home/AddUser"><i class="fa fa-user-plus"></i> ADD USER</a></li>
+
+                    <li><a href="http://localhost:55385/Home/Profile"><i class="fa fa-user"></i> PROFILE</a></li>
+                    <li><a href="logout.php"><i class="fa fa-power-off"></i> LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="wrapper">
+
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="http://localhost:55385/Home/Admin" class="list-group-item active">
+                            <i class="fa fa-columns"></i>
+                            Dashboard
+                        </a>
+                        <a href="http://localhost:55385/Home/ViewPost" class="list-group-item">
+
+                            <i class="fa fa-file"></i>  All POSTS
+                        </a>
+                        <a href="media.php" class="list-group-item">
+
+                            <i class="fa fa-database"></i>  MEDIA
+                        </a>
+
+                        <a href="http://localhost:55385/Home/Comments" class="list-group-item">
+
+                            <span class='badge'></span>;
+
+
+                            <i class="fa fa-comments"></i>  COMMENTS
+                        </a>
+                        <a href="http://localhost:55385/Home/Categories" class="list-group-item">
+                            <span class="badge"></span>
+                            <i class="fa fa-folder-open"></i>  CATAGORIES
+                        </a>
+                        <a href="http://localhost:55385/Home/User" class="list-group-item">
+
+                            <i class="fa fa-address-card"></i> USERS
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <h1><i class="fa fa-user-plus"></i>  ADD   USER <small>ADD NEW USERS</small></h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-tachometer"></i>  DASHBOARD</a></li>
+                        <li class="Active"><i class="fa fa-folder-user-plus"></i>   ADD NEW </li>
+
+                    </ol>
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="first-name">First Name:* </label>
+
+
+
+
+                                    <input type="text" id="first-name" name="first-name" value="" class="form-control" placeholder="First Name">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="last-name">Last Name:* </label>
+                                    <input type="text" name="last-name" value="" class="form-control" placeholder="Last Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username">Username:* </label>
+                                    <input type="text" id="username" name="username" value="" class="form-control" placeholder="UserName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email:* </label>
+                                    <input type="text" id="email" name="email" value="" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password">Password:* </label>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Role:* </label>
+                                    <select name="role" id="role" class="form-control">
+                                        <option value="author">Author</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Profile Picture:* </label>
+                                    <input type="file" id="image" name="image">
+                                </div>
+                                <input type="submit" value="Add User" name="submit" class="btn btn-danger">
+
+
+                            </form>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <img src='~/images/' width='100%' class='img-rounded  img-thumbnail' />  ;
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    
+    </body>
+    <footer>
+        <div class="container">
+            <div class="f">
+                <h5 class="text-center">Copyright &copy; by <a href="http://www.Doctors24/7.com">DOCTOR24/7</a> .All Right Reserved from 2019</h5>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+</html>

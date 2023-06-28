@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Doctors247Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="d_registration">
+    <Key>
+      <PropertyRef Name="doctor_id" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="doctor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contactNO" Type="Int32" Nullable="false" />
+    <Property Name="speciality" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Addresss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="designation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fees" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hospital">
+    <Key>
+      <PropertyRef Name="h_id" />
+    </Key>
+    <Property Name="h_id" Type="Int32" Nullable="false" />
+    <Property Name="h_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contact" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="spec1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="spec2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="spec3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Doctors247EntitiesM" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="d_registration" EntityType="Self.d_registration" />
+    <EntitySet Name="hospitals" EntityType="Self.hospital" />
+    <FunctionImport Name="GetHospital" ReturnType="Collection(Doctors247Model.GetHospital_Result)" />
+  </EntityContainer>
+  <ComplexType Name="GetHospital_Result">
+    <Property Type="Int32" Name="h_id" Nullable="false" />
+    <Property Type="String" Name="h_name" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="location" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="contact" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="spec1" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="spec2" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="spec3" Nullable="true" MaxLength="255" />
+  </ComplexType>
+</Schema>

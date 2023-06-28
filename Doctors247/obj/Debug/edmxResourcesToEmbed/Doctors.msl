@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Doctors247ModelStoreContainer" CdmEntityContainer="Doctors247dbContext">
+    <EntitySetMapping Name="hospitals">
+      <EntityTypeMapping TypeName="Doctors247Model.hospital">
+        <MappingFragment StoreEntitySet="hospital">
+          <ScalarProperty Name="h_id" ColumnName="h_id" />
+          <ScalarProperty Name="h_name" ColumnName="h_name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="spec1" ColumnName="spec1" />
+          <ScalarProperty Name="spec2" ColumnName="spec2" />
+          <ScalarProperty Name="spec3" ColumnName="spec3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

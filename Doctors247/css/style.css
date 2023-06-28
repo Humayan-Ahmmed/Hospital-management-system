@@ -1,0 +1,314 @@
+
+
+
+.f{
+    padding: 50px
+    
+    padding-left:20px;
+}
+
+}
+secton{
+    margin-top: 100px
+}
+.row2{
+     margin-bottom: 50px;
+    
+}
+
+.row3{
+    margin-bottom: 100px;
+}
+.popular{
+ background: #ffffff;
+ padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px
+    
+}
+
+
+.popular .details{
+    margin-left: -20px;
+}
+.popular .details p{
+ font-family: arial
+font-size:11px
+}
+
+
+.popular img{
+    width: 100%
+     
+}
+.popular img{
+ 
+     margin-top: 10px 
+}
+.popular ul li{
+    list-style: none
+}
+
+.post{
+    background:#ffffff;
+    border: 1px solid #e3e3e3
+  
+}
+.post{
+
+    margin: 15px 0px
+}
+
+.post .post-date{
+    padding: 20px
+   
+}
+.post .post-date{
+  
+    text-align:center;
+
+}
+.post .post-date .day{
+  font-size: 30px;
+    color:#337ab7;
+}
+.post .post-date .month{
+  font-size: 18px;
+
+}
+
+.post .post-date .year{
+ font-weight: 100;
+ font-family:bold;
+    
+
+}
+
+.post .post-title{
+  
+padding: 5px  20px  35px 20px;
+    border-left: 2px solid #e3e3e3
+}
+
+.post .post-title span{
+  
+color: #337ab7;
+font-weight: 500;
+margin-left: 10px;
+    }
+.post .profile-dp img{
+    width: 80%
+}
+.post .profile-dp{
+    padding: 20px;
+}
+.post > a > img{
+    width: 100%;
+
+}
+.post .description{
+    font-family: arial;
+    font-weight: 200;
+    padding: 15px;
+    line-height: 20px;
+}
+
+.post >a.btn{
+    margin-left: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.post .bottom{
+    padding:10px  20px;
+    border: 2px solid #e3e3e3;
+}
+
+.post .bottom .first{
+    margin-right: 20px
+}
+
+.post .bottom .sec{
+    margin-right: 20px
+}
+
+
+.box{
+
+    padding: 30px 30px;
+    background-color: #f8f8f8;
+    color: #3c3f41;
+    margin-top: 50px;
+
+    
+    
+    
+}
+.contact-form textarea{
+  resize: none;
+}
+.related-post{
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+}
+.related-post img{
+    width: 100%
+    
+}
+.related-post h3{
+   color:#282e3e; 
+    
+}
+
+.author{
+    background: #ffffff;
+    padding: 20px;
+     margin-bottom: 20px;
+}
+.author img{
+    width: 100%
+    
+}
+.author h4{
+   color:#282e3e; 
+    text-decoration: underline;
+    
+}
+.author p{
+ font-weight: 100
+  
+     
+}
+
+.comment{
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px
+}
+.comment h3{
+    color: #24a7cf;
+}
+.comment img{
+    width: 80%;
+    margin-top: 20px;
+}
+.comment single-comment{
+    margin-bottom: 10px;
+}
+.comment-box{
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px
+}
+.comment-box textarea{
+    resize: none;
+}
+.box textarea{
+     resize: none; 
+}
+
+@media (max-width:992px){
+    body{
+        background: #ffffff;
+    }
+   
+ 
+      .post .profile-dp{
+        margin-top: -40px;
+        text-align: center;
+    }
+    .post .post-title{
+        border: none;
+        text-align: center;
+    }
+    
+    .post .profile-dp img{
+        width: 20%;
+        
+    }
+ 
+
+}
+
+
+
+@media (max-width:786px){
+    body{
+        background: #ffffff;
+    }
+    .jumbotron #details{
+        margin-top: 20px;
+    }
+    .post .post-title{
+        margin-top: -30px;
+        text-align: center;
+    }
+      .post .profile-dp{
+        
+        text-align: center;
+    }
+    
+    .post .profile-dp img{
+        width: 40%;
+        
+    }
+    .pagination > li>a{
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+   
+   
+    .author{
+    background: #ffffff;
+    padding: 20px;
+     margin-bottom: 10px;
+        text-align: center
+}
+
+.author img{
+    width: 50%
+    
+}
+.author h4{
+   color:#282e3e; 
+    text-decoration: underline;
+    
+}
+.author p{
+ font-weight: 100
+    
+}
+.comment{
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+       text-align: center;
+}
+.comment h3{
+    color: #24a7cf;
+}
+.comment img{
+    width: 30%;
+    margin-top: 20px;
+}
+.comment single-comment{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

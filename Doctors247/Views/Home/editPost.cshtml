@@ -1,0 +1,186 @@
+﻿
+
+
+@{
+    ViewBag.Title = "editPost";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctors 24/7</title>
+    <link rel="icon" type="image/png" href="~/images/icon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/csss/style.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Doctor24/7</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Welcome: <i class="fa fa-user"></i>Meem</a></li>
+                    <li><a href="http://localhost:55385/Home/AddPost"><i class="fa fa-plus-circle"></i> ADD POST</a></li>
+
+                    <li><a href="http://localhost:55385/Home/AddUser"><i class="fa fa-user-plus"></i> ADD USER</a></li>
+
+                    <li><a href="http://localhost:55385/Home/Profile"><i class="fa fa-user"></i> PROFILE</a></li>
+                    <li><a href="logout.php"><i class="fa fa-power-off"></i> LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="wrapper">
+
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="http://localhost:55385/Home/Admin" class="list-group-item active">
+                            <i class="fa fa-columns"></i>
+                            Dashboard
+                        </a>
+                        <a href="http://localhost:55385/Home/ViewPost" class="list-group-item">
+
+                            <i class="fa fa-file"></i>  All POSTS
+                        </a>
+                        <a href="media.php" class="list-group-item">
+
+                            <i class="fa fa-database"></i>  MEDIA
+                        </a>
+
+                        <a href="http://localhost:55385/Home/Comments" class="list-group-item">
+
+                            <span class='badge'></span>;
+
+
+                            <i class="fa fa-comments"></i>  COMMENTS
+                        </a>
+                        <a href="http://localhost:55385/Home/Categories" class="list-group-item">
+                            <span class="badge"></span>
+                            <i class="fa fa-folder-open"></i>  CATAGORIES
+                        </a>
+                        <a href="uhttp://localhost:55385/Home/User" class="list-group-item">
+
+                            <i class="fa fa-address-card"></i> USERS
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h1><i class="fa fa-pencil"></i> Edit Post <small>Edit Post Details</small></h1><hr>
+                    <ol class="breadcrumb">
+                        <li><a href="index.php"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                        <li class="active"><i class="fa fa-pencil"></i> Edit Post</li>
+
+                    </ol>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="title">Title:*</label>
+
+                                    <input type="text" name="title" placeholder="Type Post Title Here" value="" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <a href="media.php" class="btn btn-danger">Add Media</a>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="post-data" id="textarea" rows="10" class="form-control"></textarea>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="file">Post Image:*</label>
+                                            <input type="file" name="image">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="categories">Categories:*</label>
+                                            <select class="form-control" name="categories" id="categories"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="tags">Tags:*</label>
+                                            <input type="text" name="tags" placeholder="Your Tags Here" value="" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="status">Status:*</label>
+                                            <select class="form-control" name="status" id="status">
+                                                <option value="publish">Publish</option>
+                                                <option value="draft">Draft</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-success" value="Update Post" name="update">
+                                <hr>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        
+
+    </body>
+
+    <footer>
+        <div class="container">
+            <div class="f">
+                <h5 class="text-center">Copyright &copy; by <a href="http://www.Doctors24/7.com">DOCTOR24/7</a> .All Right Reserved from 2019</h5>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+</html>
+
+
+
+
+
+

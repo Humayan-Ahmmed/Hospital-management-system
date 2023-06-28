@@ -1,0 +1,493 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctors 24/7</title>
+    <link rel="icon" type="image/png" href="~/images/icon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/header.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img-logo">
+                        <img id="logo" src="~/images/logo.png" class="img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-1">
+                    <div class="login">
+                        <div class="container">
+
+                            <!--  <a href="login1.php" class="btn btn-info btn-md" role="button">login</a> -->
+
+                            <a href="http://localhost:55385/Home/Patient_login" class="btn btn-info btn-sm" role="button" name="patient">Login as a Patient</a>
+
+
+                            <a href="http://localhost:55385/Home/Doctor_login" class="btn btn-info btn-sm" role="button" name="doctor">Login as a Doctor</a>
+                            <!-- <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#login">login</button>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    v                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class=" nav navbar-nav ">
+                                <li class="nav-item"><a class="nav-link active" href="homepage_with_login.php">Home</a></li>
+                                <li class="nav-item"> <a href="doctors.php"> Doctors </a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Donors
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="donor.php">A+</a></li>
+                                        <li><a href="#">B+</a></li>
+                                        <li><a href="#">AB+</a></li>
+                                        <li><a href="#">O+</a></li>
+                                        <li><a href="#">A-</a></li>
+                                        <li><a href="#">B-</a></li>
+                                        <li><a href="#">AB-</a></li>
+                                        <li><a href="#">O-</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"> <a href="hospital.php"> Hospitals </a></li>
+                                <li class="nav-item">@Html.ActionLink("Health Cards", "HealthCards", "Home")</li>
+                                <li class="nav-item"> @Html.ActionLink("Health Blogs", "Health_blog", "Home")</li>
+                                <li class="nav-item"> @Html.ActionLink("Contact", "Contact", "Home")</li>
+                                <li class="nav-item"> @Html.ActionLink("About", "About", "Home")</li>
+                                <li class="nav-item"> <a href="#"> Listed Data </a></li>
+                                <li class="nav-item"> <a href="#"> Admin Panel </a></li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <?php if(isset($_SESSION['success'])): ?>
+                                    <p>
+                                        <?php
+                                        echo $_SESSION['success'];
+                                        unset($_SESSION['success']);
+                                        ?>
+                                    </p>
+                                    <?php endif; ?>
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+
+                                        <!-- <?php if(isset($_SESSION["signUpUserName"])):
+                                           ?>
+                                           <p><?php echo $_SESSION['signUpUserName']; ?><span class="caret"></span></p>
+                                        <?php endif; ?> -->
+                                        <?php if(isset($_SESSION["signInUserName"])) :
+                                        ?>
+                                        <p><?php echo $_SESSION['signInUserName']; ?> <span class="caret"></span></p>
+
+
+                                        <?php endif; ?>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- <?php if(isset($_SESSION["signUpUserName"])):
+                                        ?>
+                                        <li> <a href="doctor_private.php"> Profile </a></li>
+
+                                        <?php endif ;?> -->
+                                        <?php if(isset($_SESSION["signInUserName"])):
+                                        ?>
+                                        <li> <a href="doctor_private.php"> Profile </a></li>
+
+                                        <?php endif ;?>
+
+                                        <!-- <?php if(isset($_SESSION["signUpUserName"])):
+                                        ?>
+                                        <li> <a href="logout.php"> Logout </a></li>
+
+                                        <?php endif ;?> -->
+                                        <?php if(isset($_SESSION["signInUserName"])):
+                                        ?>
+                                        <li> <a href="logout.php"> Logout </a></li>
+
+                                        <?php endif ;?>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row2"> </div>
+                    <div class="post">
+
+                        <div class="row">
+                            <div class="col-md-2 post-date">
+                                <div class="day"><26></div>
+                                <div class="month">January</div>
+                                <div class="year">2018</div>
+                            </div>
+                            <div class="col-md-8 post-title">
+                                <a href=""><h2>ghgsadhgjashkjh</h2>                    </a>
+                                <p>writen By <span>dh</span></p>
+                            </div>
+                            <div class="col-md-2 profile-dp">
+                                <img src="~/images/a.png" alt="" class="img-circle">
+
+                            </div>
+                        </div>
+                        <a href=""><img src="~/images/Doctor-Patient-Relationship.jpg" alt=""></a>
+                        <div class="description">
+                            jkkhkjllhfkshdfkjsdhfkjdshfkjhdfkjsdafkslfjdlksjflsdjflk
+                            sdfskjfhksjhfkjsfhkjsfhkjdsh
+                        </div>
+
+                        <div class="bottom">
+                            <span class="first">
+                                <i class="fa fa-folder" aria-hidden="true"></i><a href="">
+                                    books
+
+
+                                </a>
+                            </span>|
+                            <span class="sec"><i class="fa fa-comments" aria-hidden="true"></i><a href=""> Comments</a></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="related-post">
+                        <h3>this is for related post</h3>
+                        <hr>
+                        <div class="row">
+                           
+
+
+                            <div class="col-sm-4">
+                                <a href="">
+                                    <img src="~/images/Doctor-Patient-Relationship.jpg" alt="slider1">
+                                    <h4>djsadkashdksa </h4>
+                                </a>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                    <div class="author">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="~/images/doc-bann.png" alt="Profile Image" class="img-rounded">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4>jhjhkj</h4>
+                               
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="comment">
+                        <h3>Comments</h3>
+                    
+
+                        <hr>
+                        <div class="row single-comment">
+                            <div class="col-sm-2">
+                                <img src="~/images/doc-bann.png" alt="Profile Picture" class="img-rounded">
+                            </div>
+                            <div class="col-sm-10">
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div><hr>
+                      
+                    </div>
+                  
+                    <div class="comment-box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="full-name">Full-Name:*</label>
+                                        <input type="text" value="" id="full-name" name="name" class="form-control" placeholder="Enter your name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="comment">Comment:*</label>
+                                        <textarea id="comment" name="comment" cols="30" rows="10" placeholder="write your comment" class="form-control"></textarea>
+
+
+
+
+                                    </div>
+                                    <input type="submit" name="submit" class="btn btn-success" value="submit">
+
+
+                                   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+                
+                    <div class="col-md-4">
+                        <div class="row2">
+
+                        </div>
+                        <div class="widgets">
+                            <form action="index.php" method="post">
+
+                                <div class="input-group">
+                                    <input type="text" name="search-title" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <input type="submit" value="GO" class="btn btn-success" name="search">
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+                        <div class="widgets">
+                            <div class="popular">
+                                <h4>POPULAR POSTS</h4>
+
+
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="widgets">
+                            <div class="popular">
+                                <h4>POPULAR POSTS</h4>
+
+
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <a href=""><img src="~/images/3.png.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-7 details">
+                                        <a href=""><h5>This is heading for post</h5></a>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>28 March,2019</p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="widgets">
+                            <div class="popular">
+                                <h4>Social Icon</h4>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <a href="#"><img src="~/images/facebook.png " class="img-responsive img-thumbnail" alt="FACEBOOK"></a>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <a href="#"><img src="~/images/google.png" class="img-responsive img-thumbnail" alt="GOOGLEPLUS"></a>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <a href="#"><img src="~/images/instagram.png" class="img-responsive img-thumbnail" alt=""></a>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <a href="#"><img src="~/images/link.png" class="img-responsive img-thumbnail" alt="FACEBOOK"></a>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+<footer>
+
+    <div class="last_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h1 class="text-center book_phone_text"> Like to book on phone? Call </h1>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <p class="text-center book_phone_no">
+                        <i class="fa fa-phone fa-5x" aria-hidden="true"></i>
+                        <span class="phone_no">724889</span>
+                    </p>
+                </div>
+
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img id="logo-footer" src="~/images/logo.png" class="img-responsive">
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h4> <i class="fa fa-copyright" aria-hidden="true"></i> 2019 Doctors24/7 Ltd. All rights reserved.<br></h4>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</html>
+

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Doctors247ModelStoreContainer" CdmEntityContainer="Doctors247EntitiesM">
+    <EntitySetMapping Name="d_registration">
+      <EntityTypeMapping TypeName="Doctors247Model.d_registration">
+        <MappingFragment StoreEntitySet="d_registration">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="contactNO" ColumnName="contactNO" />
+          <ScalarProperty Name="speciality" ColumnName="speciality" />
+          <ScalarProperty Name="Addresss" ColumnName="Addresss" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="Fees" ColumnName="Fees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hospitals">
+      <EntityTypeMapping TypeName="Doctors247Model.hospital">
+        <MappingFragment StoreEntitySet="hospital">
+          <ScalarProperty Name="h_id" ColumnName="h_id" />
+          <ScalarProperty Name="h_name" ColumnName="h_name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="spec1" ColumnName="spec1" />
+          <ScalarProperty Name="spec2" ColumnName="spec2" />
+          <ScalarProperty Name="spec3" ColumnName="spec3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetHospital" FunctionName="Doctors247Model.Store.GetHospital">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Doctors247Model.GetHospital_Result">
+          <ScalarProperty Name="h_id" ColumnName="h_id" />
+          <ScalarProperty Name="h_name" ColumnName="h_name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="spec1" ColumnName="spec1" />
+          <ScalarProperty Name="spec2" ColumnName="spec2" />
+          <ScalarProperty Name="spec3" ColumnName="spec3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
